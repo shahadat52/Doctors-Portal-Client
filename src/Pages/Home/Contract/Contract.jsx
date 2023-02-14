@@ -8,7 +8,9 @@ const Contract = () => {
         event.preventDefault();
         const form = event.target
         const email = form.email.value
-        console.log(email);
+        const subject = form.subject.value
+        const message = form.message.value
+        console.log(email, subject, message);
     }
     return (
         <div className='text-center text-white h-[580px]'
@@ -26,13 +28,13 @@ const Contract = () => {
                     onSubmit={handleSubmit}
                 >
                     <div className=''>
-                        <input name='email' type="text" placeholder="Your email" className="input input-bordered  w-1/3 mx-auto" required  />
+                        <input name='email' type="email" placeholder="Your email" className="input input-bordered  w-1/3 mx-auto" required  />
                     </div>
                     <div className='mt-5'>
                         <input name='subject' type="text" placeholder="Subject" className="input input-bordered  w-1/3 mx-auto" required />
                     </div>
                     <div className='mt-5'>
-                        <textarea name='message' className="textarea w-1/3 h-[136px] mx-auto" placeholder="Your message" required></textarea>
+                        <textarea name='message'  type="text" className=" text-black textarea w-1/3 h-[136px] mx-auto" placeholder="Your message" required></textarea>
                     </div>
                     <div className='mt-7'>
                         <button type="submit"><ButtonPrimary>Submit</ButtonPrimary></button>
